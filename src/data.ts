@@ -629,13 +629,12 @@ export const projects: ShowCase[] = [
     startsAt: undefined,
     endsAt: undefined,
     workdescription: `
-    TAP is a Textual Analysis Platform. I was responsible to plan overall product and design the architecture.
-    With a view on Client/User perspective. I lead and managed whole team of 5 people.
-    I researched on what should be the purpose of Textual Analysis and ways to achieve it.
-    Finally I settled for Spacy to achieve this goal given the complexity for problem stated for smalll scale
-      and medium scale companies.
-    I also developed back-end and front-end of this platform. For back-end I used Python, Flask, AWS-Redis,
-      AWS-SageMaker, postgresql and github. For front-end I used html5, css3, jquery.
+    I developed an AI model to detect whether the site is accessed by bot or normal user or by proxy browser.
+    This system can automatically detect malicious access when the site is accessed and returns the result within 5 secs.
+    Currently I am trying to reduce this time frame.
+    For this I experimented on outlier detection algorithms.
+    I used scikit-learn, keras, pandas, jupyter notebook, ec2, isolationforest,
+      randomforest, Python, AWS-lambda, AWS-s3, AWS-SageMaker, and github.
     `,
     urls: [
       'https://tap.soulputs.com/',
@@ -656,9 +655,7 @@ export const projects: ShowCase[] = [
       Alexa, Google Dialogflow.
     For back-end I used Python, Flask, postgresql, mongodb and bitbucket. Front-end : html5, css3, jquery.
     `,
-    urls: [
-      'https://blockswap-46c8d.firebaseapp.com/trade',
-    ],
+    urls: [],
     media: [],
     skills: {}
   },
