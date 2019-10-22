@@ -3,4 +3,4 @@
 
 # rutuja.soulputs.com
 
-# credit to https://github.com/tamino-martinius for website design
+credit to https://github.com/tamino-martinius for website design
