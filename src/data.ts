@@ -50,7 +50,9 @@ export const svm: Skill = { level: 0.7, name: 'Support Vector Machine' };
 export const nbclassifier: Skill = { level: 0.7, name: 'Naive Bayes Classifier' };
 export const maxentropy: Skill = { level: 0.7, name: 'Maximum Entropy Classifier' };
 export const cnn: Skill = { level: 0.8, name: 'Convolutional Neural Network' };
+export const rnn: Skill = { level: 0.8, name: 'Recurrent Neural Network' };
 export const dnn: Skill = { level: 0.8, name: 'Deep Learning Neural Network' };
+export const lstm: Skill = { level: 0.6, name: 'Long Short Term Memory' };
 export const randomforest: Skill = { level: 0.8, name: 'Random Forest' };
 export const isolationforest: Skill = { level: 0.8, name: 'Isolation Forest' };
 export const outlierdetection: Skill = { level: 0.8, name: 'Outlier Detection Algorithms' };
@@ -79,18 +81,22 @@ export const matplotlib: Skill = { level: 0.5, name: 'Matplotlib' };
 // AWS
 
 // AWS / Compute
+export const ecr: Skill = {
+  level: 0.7,
+  name: 'Elastic Container Registry'
+};
 export const ec2: Skill = {
   level: 0.8,
-  name: 'EC2'
+  name: 'EC2 instances'
 };
 export const lambda: Skill = {
-  level: 0.8,
+  level: 0.7,
   name: 'Lambda'
 };
 
 // AWS / Developer Tools
 export const codecommit: Skill = {
-  level: 0.9,
+  level: 0.8,
   name: 'CodeCommit'
 };
 export const cloud9: Skill = {
@@ -106,11 +112,11 @@ export const rds: Skill = {
 
 // AWS / Machine Learning
 export const sagemaker: Skill = {
-  level: 0.6,
+  level: 0.9,
   name: 'SageMaker'
 };
 export const notebook: Skill = {
-  level: 0.7,
+  level: 0.8,
   name: 'Jupyter Notebook'
 };
 
@@ -179,11 +185,11 @@ export const django: Skill = { level: 0.3, name: 'Django' };
 
 // Backend / Deploy
 export const aws: Skill = {
-  level: 0.7,
+  level: 0.6,
   name: 'AWS'
 };
 export const docker: Skill = {
-  level: 0.6,
+  level: 0.8,
   name: 'Docker'
 };
 export const git: Skill = {
@@ -255,11 +261,17 @@ export const less: Skill = {
 };
 
 
-// Miscellaneous
-export const cybersecurity: Skill = { level: 0.4, name: 'Cyber Security' };
+// Virtual Environment
 export const anaconda: Skill = { level: 0.8, name: 'Anaconda' };
 export const pip: Skill = { level: 0.8, name: 'Python Installer Package' };
 
+
+// Domain
+export const cybersecurity: Skill = { level: 0.8, name: 'Cybersecurity' };
+export const fintech: Skill = { level: 0.8, name: 'Fintech' };
+export const software: Skill = { level: 0.8, name: 'Software service company' };
+export const mobile: Skill = { level: 0.8, name: 'Mobile app development' };
+export const product: Skill = { level: 0.8, name: 'Product based company' };
 
 
 export const skills: SkillSet[] = [
@@ -275,7 +287,9 @@ export const skills: SkillSet[] = [
           nbclassifier,
           maxentropy,
           cnn,
+          rnn,
           dnn,
+          lstm,
           randomforest,
           isolationforest,
           outlierdetection,
@@ -317,6 +331,7 @@ export const skills: SkillSet[] = [
       {
         title: 'Compute',
         data: {
+          ecr,
           ec2,
           lambda
         },
@@ -427,9 +442,18 @@ export const skills: SkillSet[] = [
     ],
   },
   {
-    title:'Miscellaneous',
+    title:'Domain',
     data:{
       cybersecurity,
+      fintech,
+      software,
+      mobile,
+      product
+    },
+  },
+  {
+    title:'Virtual Environment',
+    data:{
       anaconda,
       pip
     },
@@ -470,18 +494,21 @@ export const curriculumVitae: (Job | Education)[] = [
     skills: {
       serverless,
       sam,
-      cybersecurity,
       logisticregression,
       outlierdetection,
+      rnn,
+      lstm,
       svm,
       cnn,
       decisiontree,
       scikitlearn,
       python,
       aws,
+      ecr,
       lambda,
       mongodb,
-      sagemaker
+      sagemaker,
+      cybersecurity
     },
   },
   {
@@ -507,7 +534,8 @@ export const curriculumVitae: (Job | Education)[] = [
       jinja,
       jquery,
       redis,
-      aws
+      aws,
+      software
     }   
   },
   {
@@ -533,7 +561,8 @@ export const curriculumVitae: (Job | Education)[] = [
       jinja,
       jquery,
       mongodb,
-      aws
+      aws,
+      product
     }
   },
   {
@@ -557,7 +586,8 @@ export const curriculumVitae: (Job | Education)[] = [
       less,
       css,
       html,
-      js
+      js,
+      fintech
     }
   },
   {
@@ -578,7 +608,8 @@ export const curriculumVitae: (Job | Education)[] = [
       xamarin,
       css,
       html,
-      js
+      js,
+      mobile
     }
   },
 
@@ -592,7 +623,7 @@ export const curriculumVitae: (Job | Education)[] = [
 
 export const projects: ShowCase[] = [
   {
-    name: 'URL-check',
+    name: 'Website security',
     startsAt: undefined,
     endsAt: undefined,
     workdescription: `
@@ -617,7 +648,23 @@ export const projects: ShowCase[] = [
     Currently I am trying to reduce this time frame.
     For this I experimented on outlier detection algorithms.
     I used scikit-learn, keras, pandas, jupyter notebook, ec2, isolationforest,
-      randomforest, Python, AWS-lambda, AWS-s3, AWS-SageMaker, and github.
+      rnn (recurrent neural network), Python, AWS-lambda, AWS-s3, AWS-SageMaker, and github.
+    `,
+    urls: [],
+    media: [],
+    skills: {}
+  },
+  {
+    name: 'Attack type detection',
+    startsAt: undefined,
+    endsAt: undefined,
+    workdescription: `
+    I developed an AI model to detect the type of attack. This model determines whether there is attack with previous AI models and if yes;
+      which type among these id used for attack - Denial-of-service (DoS) and distributed denial-of-service (DDoS) attacks.
+      Man-in-the-middle (MitM) attack, Phishing and spear phishing attacks, Drive-by attack, Password attack, SQL injection attack,
+      Cross-site scripting (XSS) attack, Eavesdropping.
+    I used scikit-learn, keras, pandas, jupyter notebook, ecr, ec2, cnn (concurrent neural network),
+      Python, AWS-lambda, AWS-s3, AWS-SageMaker, and github.
     `,
     urls: [],
     media: [],
@@ -633,7 +680,7 @@ export const projects: ShowCase[] = [
     I researched on what should be the purpose of Textual Analysis and ways to achieve it.
     Finally I settled for Spacy to achieve this goal given the complexity for problem stated for smalll scale
       and medium scale companies.
-      I also developed back-end and front-end of this platform. For back-end I used Python, Flask, AWS-Redis, 
+    I also developed back-end and front-end of this platform. For back-end I used Python, Flask, AWS-Redis, 
       AWS-SageMaker, postgresql and github. For front-end I used html5, css3, jquery.
     `,
     urls: [
